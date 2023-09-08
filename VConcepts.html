@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 Concepts</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: coral
+        }
+
+        h2 {
+            color: black
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+    </style>
+
+      
+
+</head>
+<body>
+    
+    <h1>v-if</h1>
+    <h2 v-if="awesome">Vue is awesome!</h2>
+
+
+    <h1>v-else<h1>
+    <div id="app">
+        <button @click="awesome = !awesome">Toggle</button>
+        <h2 v-if="awesome">Vue is awesome!</h2>
+        <h2 v-else>Oh no 😢</h2>
+    </div>
+
+    
+    <h1>v-else-if</h1>
+    <div id="conditionals">
+        <div v-if="type === 'A'">
+          A
+        </div>
+        <div v-else-if="type === 'B'">
+          B
+        </div>
+        <div v-else-if="type === 'C'">
+          C
+        </div>
+        <div v-else>
+          Not A/B/C
+        </div>
+      </div>
+
+      <h1>v-show</h1>
+      <h2 v-show="ok">Hello!</h2>
+
+
+      <h1>Input Handlings: v-model</h1>
+      <div>Checked names:</div>
+
+      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+      <label for="jack">Jack</label>
+      
+      <input type="checkbox" id="john" value="John" v-model="checkedNames">
+      <label for="john">John</label>
+      
+      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+      <label for="mike">Mike</label>
+
+      <div>Picked:</div>
+
+    <input type="radio" id="one" value="One" v-model="picked" />
+    <label for="one">One</label>
+
+    <input type="radio" id="two" value="Two" v-model="picked" />
+    <label for="two">Two</label>
+
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    awesome: false
+                };
+            }
+        });
+
+        app.mount('#app');
+    
+        
+
+  
+    </script>
+</body>
+</html>
