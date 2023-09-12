@@ -38,30 +38,30 @@
 <body>
     
     <h1>v-if</h1>
-    <h2 v-if="awesome">Vue is awesome!</h2>
+    <h2 v-if="Deakin">I go to Deakin!</h2>
 
 
     <h1>v-else<h1>
     <div id="app">
-        <button @click="awesome = !awesome">Toggle</button>
-        <h2 v-if="awesome">Vue is awesome!</h2>
-        <h2 v-else>Oh no 😢</h2>
+        <button @click="deakin = !deakin">Toggle</button>
+        <h2 v-if="deakin">I go to Deakin!</h2>
+        <h2 v-else>I don't go to Monash</h2>
     </div>
 
     
     <h1>v-else-if</h1>
     <div id="conditionals">
-        <div v-if="type === 'A'">
-          A
+        <div v-if="course === 'Engineering'">
+          Studying Engineering
         </div>
-        <div v-else-if="type === 'B'">
-          B
+        <div v-else-if="course === 'Computer Science'">
+          Majoring in Computer Science
         </div>
-        <div v-else-if="type === 'C'">
-          C
+        <div v-else-if="course === 'Business'">
+          Pursuing Business Management
         </div>
         <div v-else>
-          Not A/B/C
+          Not pursuing any of the courses
         </div>
       </div>
 
@@ -72,14 +72,14 @@
       <h1>Input Handlings: v-model</h1>
       <div>Checked names:</div>
 
-      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-      <label for="jack">Jack</label>
+      <input type="checkbox" id="pizza" value="Pizza" v-model="checkedFoods">
+      <label for="pizza">Pizza</label>
       
-      <input type="checkbox" id="john" value="John" v-model="checkedNames">
-      <label for="john">John</label>
+      <input type="checkbox" id="pasta" value="Pasta" v-model="checkedFoods">
+      <label for="pasta">Pasta</label>
       
-      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-      <label for="mike">Mike</label>
+      <input type="checkbox" id="burger" value="Burger" v-model="checkedFoods">
+      <label for="burger">Burger</label>
 
       <div>Picked:</div>
 
@@ -94,7 +94,7 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    awesome: false
+                    deakin: false
                 };
             }
         });
